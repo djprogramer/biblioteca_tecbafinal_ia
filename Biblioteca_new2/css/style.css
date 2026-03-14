@@ -1,0 +1,450 @@
+/* Estilos personalizados para Biblioteca TECBA */
+
+/* Variables de color - Esquema Naranja y Negro */
+:root {
+    --primary-color: rgb(255, 113, 0);      /* Naranja exacto RGB(255, 113, 0) */
+    --secondary-color: #FF8C42;   /* Naranja secundario */
+    --accent-color: #FFA726;      /* Naranja más claro */
+    --dark-color: #212529;          /* Negro principal */
+    --light-color: #F8F9FA;         /* Blanco casi puro */
+    --text-color: #343A40;          /* Gris oscuro para texto */
+    --border-color: #DEE2E6;         /* Gris claro para bordes */
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image-container {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-image {
+        max-height: 250px;
+    }
+    
+    .hero-image-container {
+        animation: none;
+    }
+}
+
+/* Cards de libros */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+    height: 280px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    height: 2.6em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Badges */
+.badge {
+    font-size: 0.75rem;
+}
+
+/* Botones */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-1px);
+}
+
+/* Paginación */
+.pagination .page-link {
+    border-radius: 6px;
+    margin: 0 2px;
+    border: none;
+    color: var(--primary-color);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--primary-color);
+    border: none;
+}
+
+/* Búsqueda */
+.search-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Features Section con fondo animado */
+.features-section {
+    position: relative;
+    background-image: url('../images/wallpaperbetter2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 350px;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.features-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.85) 50%, 
+        rgba(248, 249, 250, 0.9) 100%);
+    animation: backgroundPulse 8s ease-in-out infinite;
+    z-index: 1;
+    border: none;
+}
+
+.features-section .container {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 1rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1rem 0;
+    border: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    animation: fadeInUp 1s ease-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 113, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+@keyframes backgroundPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .features-section {
+        background-attachment: scroll;
+        min-height: auto;
+    }
+    
+    .feature-card {
+        margin: 0.5rem 0;
+        padding: 1.5rem;
+    }
+    
+    .features-section::before {
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.98) 0%, 
+            rgba(255, 255, 255, 0.92) 50%, 
+            rgba(248, 249, 250, 0.95) 100%);
+    }
+}
+
+/* CTA Section con fondo */
+.cta-section {
+    position: relative;
+    background-image: url('../images/wallpaperbetter2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 350px;
+    overflow: hidden;
+    margin-top: -1px;
+    padding-top: 4rem;
+    z-index: 3;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.85) 50%, 
+        rgba(248, 249, 250, 0.9) 100%);
+    animation: backgroundPulse 8s ease-in-out infinite;
+    z-index: 1;
+    border: none;
+    margin-top: 0;
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-section h3,
+.cta-section p,
+.cta-section .btn {
+    color: white !important;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 
+                 1px 1px 2px rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+}
+
+.cta-section .btn {
+    background: white !important;
+    color: rgb(255, 113, 0) !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 2px solid rgba(255, 255, 255, 1) !important;
+}
+
+@keyframes backgroundPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cta-section {
+        background-attachment: scroll;
+        min-height: auto;
+    }
+    
+    .cta-section .btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Categorías */
+.category-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.category-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Vista de detalle de libro */
+.book-cover {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.book-info h1 {
+    color: var(--dark-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.book-meta {
+    background: var(--light-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.book-meta .badge {
+    margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 200px;
+        font-size: 2rem;
+    }
+    
+    .book-info h1 {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+/* Loading spinner */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Alertas personalizadas */
+.alert {
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Tablas */
+.table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.table th {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+/* Formularios */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
