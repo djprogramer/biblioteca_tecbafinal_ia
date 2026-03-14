@@ -1,0 +1,48 @@
+# Archivos de entorno
+.env
+.env.local
+.env.production
+
+# Archivos de caché
+cache/
+*.cache
+
+# Logs
+logs/
+*.log
+error.log
+
+# Archivos temporales
+temp/
+tmp/
+*.tmp
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos compilados
+*.class
+*.o
+*.exe
+
+# Dependencias (si usas composer)
+/vendor/
+composer.lock
+
+# Archivos de sesión
+/sessions/
+
+# Configuración local
+config/local.php
